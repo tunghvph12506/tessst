@@ -1,0 +1,20 @@
+<base href="http://localhost:3000">
+<form action="/" method="post" enctype="multipart/form-data">
+    <input name="userName" placeholder="user Name">
+    <input name="mon" placeholder="Mon Hoc">
+    <input name="avatar11" type="file" >
+    <button type="submit">Save</button>
+
+    {{#each users}}
+        <div name="id">{{this._id}}</div>
+        <div>{{this.userName}}</div>
+        <div>{{this.mon}}</div>
+        <img style="width: 50px" src="uploads/{{this.avatar}}">
+        <a href="./updateUser/{{this._id}}">Upload</a>
+        <a onclick="return confirm('ban muon xoa k')" href="/deleteUsers/{{this._id}}">Delete</a>
+
+    <br>
+    {{/each}}
+</form>
+
+
